@@ -1,0 +1,67 @@
+body {
+  font-family: 'Cormorant Garamond', sans-serif;
+  background-color: #d6c1ad;
+}
+
+#word,
+#chorus,
+#verse2,
+#verse3 {
+  display: none;
+}
+
+#bg-video {
+  position: absolute;
+  top: 84%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  width: 98%;
+  height: 25%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+p:hover {
+  font-weight: bold;
+  color: rgb(104, 73, 26);
+  transition: 5s;
+  text-shadow: 11px 7px 10px rgb(236, 230, 116), 2px 4px 10px rgb(244, 209, 184);
+
+}
+
+header {
+  text-align: center;
+  background-color: #333;
+  background-image: url("img/bg1.jpg");
+  background-size: cover;
+  color: #FFFFFF;
+  padding: 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  text-shadow: 11px 7px 12px #d0ae7b, 2px 4px 9px #f2931e;
+}
+
+
+
+main {
+  padding: 12px;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  margin-top: 5px;
+  margin-bottom: 2px;
+}
+
+p {
+  font-size: 18px;
+  margin-top: 3px;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', sans-serif;
+
+}

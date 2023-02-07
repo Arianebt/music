@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>My Silver Lining</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>My Silver Lining</h1>
+  </header>
+  <main>
+    <div>
+      <audio id="audioControls" controls>
+        <source src="audio/audio.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+
+    </div>
+    <video id="bg-video" autoplay loop muted>
+      <source src="video/video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <section id="word">
+      <h2>Verse 1</h2>
+      <p>I don't want to wait anymore I'm tired of looking for answers<br>
+        Take me some place where there's music and there's laughter<br>
+        I don't know if I'm scared of dying but I'm scared of living too fast, too slow<br>
+        Regret, remorse, hold on, oh no I've got to go<br>
+        There’s no starting over, no new beginnings, time races on<br>
+        And you've just gotta keep on keeping on<br>
+        Gotta keep on going, looking straight out on the road<br>
+        Can't worry 'bout what's behind you or what's coming for you further up the road<br>
+        I try not to hold on to what is gone, I try to do right what is wrong<br>
+        I try to keep on keeping on<br>
+        Yeah I just keep on keeping on</p>
+    </section>
+    <section id="chorus">
+      <h2>Chorus</h2>
+      <p>I hear a voice calling<br>
+        Calling out for me<br>
+        These shackles I've made in an attempt to be free<br>
+        Be it for reason, be it for love<br>
+        I won't take the easy road</p>
+    </section>
+    <section id="verse2">
+      <h2>Verse 2</h2>
+      <p>I've woken up in a hotel room, my worries as big as the moon<br>
+        Having no idea who or what or where I am<br>
+        Something good comes with the bad<br>
+        A song's never just sad<br>
+        There's hope, there's a silver lining<br>
+        Show me my silver lining<br>
+        Show me my silver lining</p>
+    </section>
+
+    <section id="verse3">
+      <h2>Verse 3</h2>
+      <p>I won't take the easy road<br>
+        The easy road(2x)<br><br></p>
+      <p>Show me my Silver Lining, I try to keep on keeping on (4x)</p>
+    </section>
+  </main>
+
+  <script>
+    var audio = document.getElementById("audioControls");
+    audio.ontimeupdate = function () {
+      if (audio.currentTime < 10) {
+        document.getElementById("word").style.display = "none";
+        document.getElementById("chorus").style.display = "none";
+        document.getElementById("verse2").style.display = "none";
+        document.getElementById("verse3").style.display = "none";
+      } else if (audio.currentTime >= 10 && audio.currentTime < 60) {
+        document.getElementById("word").style.display = "block";
+      } else if (audio.currentTime >= 60 && audio.currentTime < 80) {
+        document.getElementById("word").style.display = "none";
+        document.getElementById("chorus").style.display = "block";
+      } else if (audio.currentTime > 80 && audio.currentTime < 90) {
+        document.getElementById("chorus").style.display = "none";
+      } else if (audio.currentTime > 100 && audio.currentTime < 127) {
+        document.getElementById("verse2").style.display = "block";
+      } else if (audio.currentTime > 127 && audio.currentTime < 147) {
+        document.getElementById("verse2").style.display = "none";
+        document.getElementById("chorus").style.display = "block";
+      } else if (audio.currentTime >= 147 && audio.currentTime < 210) {
+        document.getElementById("chorus").style.display = "none";
+        document.getElementById("verse3").style.display = "block";
+      } else {
+        document.getElementById("word").style.display = "none";
+        document.getElementById("chorus").style.display = "none";
+        document.getElementById("verse2").style.display = "none";
+        document.getElementById("verse3").style.display = "none";
+      }
+    };
+  </script>
+</body>
+
+</html>
